@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package shiori
+ * @package skyler
  */
 ?>
 
@@ -15,22 +15,22 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-			<?php shiori_posted_on(); ?>
+			<?php skyler_posted_on(); ?>
 
 					<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'shiori' ) );
-				if ( $categories_list && shiori_categorized_blog() ) :
+				$categories_list = get_the_category_list( __( ', ', 'skyler' ) );
+				if ( $categories_list && skyler_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( '<i class="fa fa-folder-o"></i> %1$s', 'shiori' ), $categories_list ); ?>
+				<?php printf( __( '<i class="fa fa-folder-o"></i> %1$s', 'skyler' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><i class="fa fa-comment-o"></i> <?php comments_popup_link( __( 'Leave a comment', 'shiori' ), __( '1 Comment', 'shiori' ), __( '% Comments', 'shiori' ) ); ?></span>
+		<span class="comments-link"><i class="fa fa-comment-o"></i> <?php comments_popup_link( __( 'Leave a comment', 'skyler' ), __( '1 Comment', 'skyler' ), __( '% Comments', 'skyler' ) ); ?></span>
 		<?php endif; ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -41,6 +41,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'shiori' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'skyler' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

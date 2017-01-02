@@ -3,7 +3,7 @@
  * Custom function to highlight search terms
  *
  *
- * @package shiori
+ * @package skyler
  */
 
 function search_excerpt_highlight() {

@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the left sidebar widget area.
  *
- * @package shiori
+ * @package skyler
  */
 
 if ( ! is_active_sidebar( 'sidebar-left' ) ) {

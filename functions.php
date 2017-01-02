@@ -1,11 +1,11 @@
 <?php
 /**
- * shiori functions and definitions
+ * skyler functions and definitions
  *
- * @package shiori
+ * @package skyler
  */
 
-if ( ! function_exists( 'shiori_setup' ) ) :
+if ( ! function_exists( 'skyler_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -13,15 +13,15 @@ if ( ! function_exists( 'shiori_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function shiori_setup() {
+function skyler_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on shiori, use a find and replace
-	 * to change 'shiori' to the name of your theme in all the template files
+	 * If you're building a theme based on skyler, use a find and replace
+	 * to change 'skyler' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'shiori', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'skyler', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -35,11 +35,11 @@ function shiori_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'shiori' ),
+		'primary' => __( 'Primary Menu', 'skyler' ),
 	) );
 
 	register_nav_menus( array(
-		'footer-menu' => __( 'Footer Menu', 'shiori' ),
+		'footer-menu' => __( 'Footer Menu', 'skyler' ),
 	) );
 	
 	/*
@@ -58,17 +58,17 @@ function shiori_setup() {
 		'aside', 'image', 'video', 'quote', 'link'
 	) );
 }
-endif; // shiori_setup
-add_action( 'after_setup_theme', 'shiori_setup' );
+endif; // skyler_setup
+add_action( 'after_setup_theme', 'skyler_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function shiori_widgets_init() {
+function skyler_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'shiori' ),
+		'name'          => __( 'Sidebar', 'skyler' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -78,7 +78,7 @@ function shiori_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar Left', 'shiori' ),
+		'name'          => __( 'Sidebar Left', 'skyler' ),
 		'id'            => 'sidebar-left',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -88,7 +88,7 @@ function shiori_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Contact', 'shiori' ),
+		'name'          => __( 'Contact', 'skyler' ),
 		'id'            => 'contact',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -97,17 +97,17 @@ function shiori_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 }
-add_action( 'widgets_init', 'shiori_widgets_init' );
+add_action( 'widgets_init', 'skyler_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function shiori_scripts() {
+function skyler_scripts() {
 	wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.1', 'all' );
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0', 'all' );
 
-	wp_enqueue_style( 'shiori-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'skyler-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.1', true );
 
@@ -115,7 +115,7 @@ function shiori_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'shiori_scripts' );
+add_action( 'wp_enqueue_scripts', 'skyler_scripts' );
 
 /**
  * Add Respond.js for IE

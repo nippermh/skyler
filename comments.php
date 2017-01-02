@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package shiori
+ * @package skyler
  */
 
 /*
@@ -25,16 +25,16 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'shiori' ),
+				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'skyler' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'shiori' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'shiori' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'shiori' ) ); ?></div>
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'skyler' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'skyler' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'skyler' ) ); ?></div>
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
 
@@ -43,16 +43,16 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'callback'    => 'shiori_comment'
+					'callback'    => 'skyler_comment'
 				) );
 			?>
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'shiori' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'shiori' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'shiori' ) ); ?></div>
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'skyler' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'skyler' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'skyler' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
 
@@ -62,7 +62,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'shiori' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'skyler' ); ?></p>
 	<?php endif; ?>
 
 		<?php 
@@ -77,26 +77,26 @@ if ( post_password_required() ) {
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_after' => '',
         // redefine your own textarea (the comment body)
-        'comment_field' => ' <div class="form-group"><label for="comment">' . _x( 'Comment', 'shiori' ) . '</label><textarea class="form-control" rows="10" id="comment" name="comment" aria-required="true"></textarea></div>',
+        'comment_field' => ' <div class="form-group"><label for="comment">' . _x( 'Comment', 'skyler' ) . '</label><textarea class="form-control" rows="10" id="comment" name="comment" aria-required="true"></textarea></div>',
 
         'fields' => apply_filters( 'comment_form_default_fields', array(
 
 	    'author' =>
 	      '<div class="form-group">' .
-	      '<label for="author">' . __( 'Name', 'shiori' ) . '</label> ' .
+	      '<label for="author">' . __( 'Name', 'skyler' ) . '</label> ' .
 	      ( $req ? '<span class="required">*</span>' : '' ) .
 	      '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 	      '" size="30"' . $aria_req . ' /></div>',
 
 	    'email' =>
-	      '<div class="form-group"><label for="email">' . __( 'Email', 'shiori' ) . '</label> ' .
+	      '<div class="form-group"><label for="email">' . __( 'Email', 'skyler' ) . '</label> ' .
 	      ( $req ? '<span class="required">*</span>' : '' ) .
 	      '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 	      '" size="30"' . $aria_req . ' /></div>',
 
 	    'url' =>
 	      '<div class="form-group"><label for="url">' .
-	      __( 'Website', 'shiori' ) . '</label>' .
+	      __( 'Website', 'skyler' ) . '</label>' .
 	      '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 	      '" size="30" /></div>'
 	    )

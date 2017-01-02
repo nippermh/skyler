@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package shiori
+ * @package skyler
  */
 
 get_header(); ?>
@@ -27,46 +27,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'shiori' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'skyler' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'shiori' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'skyler' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'shiori' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'shiori' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'skyler' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'skyler' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'shiori' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'shiori' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'skyler' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'skyler' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'shiori' );
+							_e( 'Asides', 'skyler' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'shiori' );
+							_e( 'Galleries', 'skyler' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'shiori' );
+							_e( 'Images', 'skyler' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'shiori' );
+							_e( 'Videos', 'skyler' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'shiori' );
+							_e( 'Quotes', 'skyler' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'shiori' );
+							_e( 'Links', 'skyler' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'shiori' );
+							_e( 'Statuses', 'skyler' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'shiori' );
+							_e( 'Audios', 'skyler' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'shiori' );
+							_e( 'Chats', 'skyler' );
 
 						else :
-							_e( 'Archives', 'shiori' );
+							_e( 'Archives', 'skyler' );
 
 						endif;
 					?>
@@ -93,7 +93,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php shiori_paging_nav(); ?>
+			<?php skyler_paging_nav(); ?>
 
 		<?php else : ?>
 

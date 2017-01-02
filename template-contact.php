@@ -4,7 +4,7 @@
  *
  * This is the template that displays a contact form.
  *
- * @package shiori
+ * @package skyler
  */
 
 if(isset($_POST['submitted'])) {
@@ -42,9 +42,9 @@ if(isset($_POST['submitted'])) {
         if (!isset($emailTo) || ($emailTo == '') ){
             $emailTo = get_option('admin_email');
         }
-        $subject = __('From ','shiori').$name;
-        $body = __('Name: ','shiori').$name."\n".__('Email: ','shiori').$email."\n".__('Comments: ','shiori').$comments;
-        $headers = __('From: ','shiori') .$name. ' <'.$emailTo.'>' . "\r\n" . __('Reply-To:','shiori') .$name. '<'.$email.'>';
+        $subject = __('From ','skyler').$name;
+        $body = __('Name: ','skyler').$name."\n".__('Email: ','skyler').$email."\n".__('Comments: ','skyler').$comments;
+        $headers = __('From: ','skyler') .$name. ' <'.$emailTo.'>' . "\r\n" . __('Reply-To:','skyler') .$name. '<'.$email.'>';
 
         wp_mail($emailTo, $subject, $body, $headers);
         $emailSent = true;
@@ -75,20 +75,20 @@ get_header(); ?>
 
 				          <?php if(isset($emailSent) && $emailSent == true) { ?>
 				                <div class="alert alert-success" role="alert">
-				                    <p><?php _e('Thanks, your email was sent successfully.', 'shiori'); ?></p>
+				                    <p><?php _e('Thanks, your email was sent successfully.', 'skyler'); ?></p>
 				                </div>
 				            <?php } else { ?>
 
 				                <?php if(isset($hasError) || isset($captchaError)) { ?>
 				                    <div class="alert alert-danger alert-dismissible" role="alert">
 									  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-									  <strong><?php _e('Error!', 'shiori'); ?></strong> <?php _e('Please try again.', 'shiori'); ?>
+									  <strong><?php _e('Error!', 'skyler'); ?></strong> <?php _e('Please try again.', 'skyler'); ?>
 									</div>
 				                <?php } ?>
 
 						        <form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 						            <div class="form-group <?php if(isset($nameError)) { echo "has-error has-feedback"; }?>">
-						                    <label class="control-label" for="contactName"><?php _e('Name', 'shiori'); ?></label>
+						                    <label class="control-label" for="contactName"><?php _e('Name', 'skyler'); ?></label>
 						                    <input class="form-control" type="text" name="contactName" id="contactName" value="" />
 						                    <?php if(isset($nameError)) { ?>
 						                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -96,7 +96,7 @@ get_header(); ?>
 						              
 						               </div>
 						               <div class="form-group <?php if(isset($emailError)) { echo "has-error has-feedback"; }?>">
-						                    <label class="control-label" for="email"><?php _e('Email', 'shiori'); ?></label>
+						                    <label class="control-label" for="email"><?php _e('Email', 'skyler'); ?></label>
 						                
 						                    <input class="form-control" type="text" name="email" id="email" value="" />
 						                    <?php if(isset($emailError)) { ?>
@@ -105,7 +105,7 @@ get_header(); ?>
 						               
 						               </div>
 						                <div class="form-group <?php if(isset($commentError)) { echo "has-error has-feedback"; }?>">
-						                    <label class="control-label" for="commentsText"><?php _e('Message', 'shiori'); ?></label>
+						                    <label class="control-label" for="commentsText"><?php _e('Message', 'skyler'); ?></label>
 						               
 						                    <textarea class="form-control" name="comments" id="commentsText" rows="10" cols="20"></textarea>
 						                     <?php if(isset($commentError)) { ?>
@@ -114,7 +114,7 @@ get_header(); ?>
 						                
 						               </div>
 						               <div class="form-actions">
-						                    <button type="submit" class="btn btn-primary"><?php _e('Send Email', 'shiori'); ?></button>
+						                    <button type="submit" class="btn btn-primary"><?php _e('Send Email', 'skyler'); ?></button>
 						                    <input type="hidden" name="submitted" id="submitted" value="true" />
 						               </div>
 						        </form>
@@ -123,13 +123,13 @@ get_header(); ?>
 				                    
 						<?php
 							wp_link_pages( array(
-								'before' => '<div class="page-links">' . __( 'Pages:', 'shiori' ),
+								'before' => '<div class="page-links">' . __( 'Pages:', 'skyler' ),
 								'after'  => '</div>',
 							) );
 						?>
 					</div><!-- .entry-content -->
 					<footer class="entry-footer">
-						<?php edit_post_link( __( 'Edit', 'shiori' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'skyler' ), '<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- .entry-footer -->
 				</article><!-- #post-## -->
 

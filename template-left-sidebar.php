@@ -6,7 +6,7 @@
  * The template for displaying the left sidebar page.
  *
  *
- * @package shiori
+ * @package skyler
  */
  
 get_header(); ?>

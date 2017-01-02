@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package shiori
+ * @package skyler
  */
 
 get_header(); ?>
@@ -34,7 +34,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php shiori_paging_nav(); ?>
+			<?php skyler_paging_nav(); ?>
 
 		<?php else : ?>
 

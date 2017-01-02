@@ -6,8 +6,8 @@
  *
  */
 
-if ( ! function_exists( 'shiori_comment' ) ) :
-function shiori_comment( $comment, $args, $depth ) {
+if ( ! function_exists( 'skyler_comment' ) ) :
+function skyler_comment( $comment, $args, $depth ) {
 
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
@@ -16,7 +16,7 @@ function shiori_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments.
 	?>
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-		<p><?php _e( 'Pingback:', 'shiori' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'shiori' ), '<span class="ping-meta"><span class="edit-link">', '</span></span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'skyler' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'skyler' ), '<span class="ping-meta"><span class="edit-link">', '</span></span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -39,14 +39,14 @@ function shiori_comment( $comment, $args, $depth ) {
                         printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
                             esc_url( get_comment_link( $comment->comment_ID ) ),
                             get_comment_time( 'c' ),
-                            sprintf( _x( '%1$s at %2$s', '1: date, 2: time', 'shiori' ), get_comment_date(), get_comment_time() )
+                            sprintf( _x( '%1$s at %2$s', '1: date, 2: time', 'skyler' ), get_comment_date(), get_comment_time() )
                         );
-                        edit_comment_link( __( 'Edit', 'shiori' ), ' <span class="edit-link">', '<span>' ); ?>
+                        edit_comment_link( __( 'Edit', 'skyler' ), ' <span class="edit-link">', '<span>' ); ?>
                     </div><!-- .comment-date -->
                 </header><!-- .comment-meta -->
     
                 <?php if ( '0' == $comment->comment_approved ) : ?>
-                    <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'shiori' ); ?></p>
+                    <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'skyler' ); ?></p>
                 <?php endif; ?>
     
                 <div class="comment-content">
@@ -54,7 +54,7 @@ function shiori_comment( $comment, $args, $depth ) {
                 </div><!-- .comment-content -->
     
                 <div class="reply">
-                    <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'reply to comment', 'shiori' ) . ' &rarr;', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+                    <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'reply to comment', 'skyler' ) . ' &rarr;', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
                 </div><!-- .reply -->
                 
             </div><!-- .comment-details -->
